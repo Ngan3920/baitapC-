@@ -1,0 +1,73 @@
+        bai7
+        Console.WriteLine("nhap n: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        int bienTam;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = i + 1; j < n; j++)
+            {
+                if (arr[i] > arr[j])
+                {
+                    bienTam = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = bienTam;
+                }
+            }
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine(arr[i]);
+        }
+
+        Console.ReadKey();
+
+
+        bai8
+        Console.WriteLine("nhap vao so phan tu cua mang: ");
+        int i = Convert.ToInt32(Console.ReadLine());
+        int[] arr = new int[i];
+        for (int j = 0; j < i; j++)
+        {
+            Console.WriteLine("Nhap phan tu: ");
+            arr[j] = Convert.ToInt32(Console.ReadLine());
+        }
+        int doDaiMax = 1, soPhanTu = 1, soCuoiCung = 0;
+        for (int j = 0; j < i - 1; j++)
+        {
+            if (arr[j] < arr[j + 1])
+            {
+                soPhanTu++;
+            }
+            else
+            {
+                if (soPhanTu > doDaiMax)
+                {
+                    doDaiMax = soPhanTu;
+                    soCuoiCung = j;
+                }
+                soPhanTu = 1;
+            }
+        }
+        Console.WriteLine("mang con: ");
+        for (int j = soCuoiCung - (doDaiMax - 1); j <= soCuoiCung; j++)
+        {
+            Console.Write(arr[j] + " ");
+        }
+
+        Console.ReadKey();
+
+
+        bai9
+        Console.WriteLine("nhap ten:");
+        string name = Console.ReadLine();
+        for (int i = name.Length - 1; i >= 0; i--)
+        {
+            Console.WriteLine(name[i]);
+        }
+        Console.ReadKey();
